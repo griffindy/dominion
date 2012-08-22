@@ -1,0 +1,2 @@
+describe 'Player', ->
+  describe '#chooseCard', ->
