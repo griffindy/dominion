@@ -3,9 +3,11 @@
   window.Dominion = {
     Deck: {},
     Turn: {},
-    Cards: {}
+    Cards: {},
+    Views: {},
+    Models: {}
   };
 
-  $(function() {});
+  Dominion.trash = function() {};
 
 }).call(this);
