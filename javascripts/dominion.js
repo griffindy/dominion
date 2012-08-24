@@ -5,7 +5,9 @@
     Turn: {},
     Cards: {},
     Views: {},
-    Models: {}
+    Models: {},
+    Collections: {},
+    Player: {}
   };
 
   Dominion.trash = function() {};

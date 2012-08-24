@@ -4,6 +4,8 @@ window.Dominion =
   Cards: {}
   Views: {}
   Models: {}
+  Collections: {}
+  Player: {}
 
 Dominion.trash = ->
 

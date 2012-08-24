@@ -22,6 +22,15 @@
       }
     };
 
+    Player.prototype.drawCard = function(number) {
+      if (number == null) {
+        number = 1;
+      }
+      return this.get('hand').push(this.get('deck').pop());
+    };
+
+    Player.prototype.drawNewHand = function() {};
+
     return Player;
 
   })(Backbone.Model);
