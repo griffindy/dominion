@@ -1,6 +1,7 @@
 describe 'Chapel', ->
   beforeEach(-> @chapel = new Dominion.Cards.Chapel)
 
+
   it 'has a cost of 2', ->
     expect(@chapel.get('cost')).toEqual 2
 
