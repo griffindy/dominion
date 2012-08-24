@@ -13,6 +13,7 @@
     SelectView.prototype.className = 'select-card';
 
     SelectView.prototype.render = function() {
+      this.$el.html("" + (this.model.get('card').get('name')));
       return this;
     };
 

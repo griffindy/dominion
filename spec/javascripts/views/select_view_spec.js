@@ -19,7 +19,7 @@
     });
     return describe('#render', function() {
       return it('has the name of the card', function() {
-        return expect(this.selectView.render().el).toMatch(/Copper/);
+        return expect(this.selectView.render().$el.text()).toMatch(/.*Copper.*/);
       });
     });
   });

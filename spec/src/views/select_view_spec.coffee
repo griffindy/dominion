@@ -12,4 +12,4 @@ describe 'SelectView', ->
 
   describe '#render', ->
     it 'has the name of the card', ->
-      expect(@selectView.render().el).toMatch /Copper/
+      expect(@selectView.render().$el.text()).toMatch /.*Copper.*/
