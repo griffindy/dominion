@@ -12,10 +12,6 @@
 
     Hand.prototype.model = Dominion.Card;
 
-    Hand.prototype.initialize = function() {
-      return this.get('player').drawCard(5);
-    };
-
     return Hand;
 
   })(Backbone.Collection);
