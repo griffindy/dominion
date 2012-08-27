@@ -6,4 +6,4 @@ class Dominion.Cards.Moat extends Backbone.Model
     type: 'Action-Reaction'
 
   play: ->
-    cardsToBeDiscarded = (@player.chooseCard for i in [1..4])
+    window.game.currentPlayer.drawCard(2)

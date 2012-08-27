@@ -1,5 +1,6 @@
 describe 'Moat', ->
   beforeEach ->
+    window.game = new Dominion.Game(2)
     @moat = new Dominion.Cards.Moat
 
   it 'has a cost of 2', ->
@@ -14,7 +15,7 @@ describe 'Moat', ->
 
   describe '#play', ->
    it 'draws two cards', ->
-     player = new Dominion.Player
+     player = window.game.currentPlayer
      spyOn player, 'drawCard'
      @moat.play()
      expect(player.drawCard).toHaveBeenCalledWith(2)

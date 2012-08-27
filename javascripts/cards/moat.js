@@ -17,15 +17,7 @@
     };
 
     Moat.prototype.play = function() {
-      var cardsToBeDiscarded, i;
-      return cardsToBeDiscarded = (function() {
-        var _i, _results;
-        _results = [];
-        for (i = _i = 1; _i <= 4; i = ++_i) {
-          _results.push(this.player.chooseCard);
-        }
-        return _results;
-      }).call(this);
+      return window.game.currentPlayer.drawCard(2);
     };
 
     return Moat;

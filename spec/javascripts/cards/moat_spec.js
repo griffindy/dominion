@@ -2,6 +2,7 @@
 
   describe('Moat', function() {
     beforeEach(function() {
+      window.game = new Dominion.Game(2);
       return this.moat = new Dominion.Cards.Moat;
     });
     it('has a cost of 2', function() {
@@ -16,7 +17,7 @@
     return describe('#play', function() {
       return it('draws two cards', function() {
         var player;
-        player = new Dominion.Player;
+        player = window.game.currentPlayer;
         spyOn(player, 'drawCard');
         this.moat.play();
         return expect(player.drawCard).toHaveBeenCalledWith(2);
