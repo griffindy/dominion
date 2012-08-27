@@ -16,20 +16,37 @@
       });
     };
 
-    Player.prototype.chooseCard = function(number) {
-      if (number == null) {
-        number = 1;
-      }
-    };
-
     Player.prototype.drawCard = function(number) {
+      var i, _i, _results;
       if (number == null) {
         number = 1;
       }
-      return this.get('hand').push(this.get('deck').pop());
+      _results = [];
+      for (i = _i = 1; 1 <= number ? _i <= number : _i >= number; i = 1 <= number ? ++_i : --_i) {
+        _results.push(this.get('hand').push(this.get('deck').pop()));
+      }
+      return _results;
     };
 
-    Player.prototype.drawNewHand = function() {};
+    Player.prototype.drawNewHand = function() {
+      return this.drawCard(5);
+    };
+
+    Player.prototype.discardCard = function(number) {
+      var i, _i, _results;
+      if (number == null) {
+        number = 1;
+      }
+      _results = [];
+      for (i = _i = 1; 1 <= number ? _i <= number : _i >= number; i = 1 <= number ? ++_i : --_i) {
+        _results.push(this.get('discardPile').push(this.get('hand').pop()));
+      }
+      return _results;
+    };
+
+    Player.prototype.chooseCard = function() {
+      return console.log('this method needs to be implemented');
+    };
 
     return Player;
 
