@@ -8,7 +8,7 @@
       return expect(this.moat.get('cost')).toEqual(2);
     });
     it('has the right description', function() {
-      return expect(this.moat.get('description')).toEqual("+1 Action      Discard any number of cards.      +1 Card per card discarded.");
+      return expect(this.moat.get('description')).toEqual("+2 Cards      When another player playts an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.");
     });
     it('is an action right type', function() {
       return expect(this.moat.get('type')).toEqual('Action-Reaction');

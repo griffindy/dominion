@@ -12,8 +12,20 @@
 
     Moat.prototype.defaults = {
       cost: 2,
-      description: "+1 Action      Discard any number of cards.      +1 Card per card discarded.",
+      description: "+2 Cards      When another player playts an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.",
       type: 'Action-Reaction'
+    };
+
+    Moat.prototype.play = function() {
+      var cardsToBeDiscarded, i;
+      return cardsToBeDiscarded = (function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 1; _i <= 4; i = ++_i) {
+          _results.push(this.player.chooseCard);
+        }
+        return _results;
+      }).call(this);
     };
 
     return Moat;
