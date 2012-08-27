@@ -10,10 +10,6 @@
       return Chapel.__super__.constructor.apply(this, arguments);
     }
 
-    Chapel.prototype.initialize = function(turn) {
-      this.turn = turn;
-    };
-
     Chapel.prototype.defaults = {
       'cost': 2,
       'description': 'Trash up to 4 cards from your hand'
@@ -25,10 +21,10 @@
         var _i, _results;
         _results = [];
         for (i = _i = 1; _i <= 4; i = ++_i) {
-          _results.push(this.turn.currentPlayer.chooseCard);
+          _results.push(window.game.currentPlayer.chooseCard);
         }
         return _results;
-      }).call(this);
+      })();
       _results = [];
       for (_i = 0, _len = cardsToBeTrashed.length; _i < _len; _i++) {
         card = cardsToBeTrashed[_i];

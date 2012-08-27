@@ -1,5 +1,6 @@
 describe 'Chapel', ->
   beforeEach ->
+    window.game = new Dominion.Game(2)
     turn = new Dominion.Turn
     turn.set({player: new Dominion.Player })
     @chapel = new Dominion.Cards.Chapel(turn)
