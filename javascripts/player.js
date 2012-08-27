@@ -11,8 +11,11 @@
     }
 
     Player.prototype.initialize = function() {
-      return this.set({
+      this.set({
         deck: new Dominion.Deck
+      });
+      return this.set({
+        hand: new Dominion.Collections.Hand
       });
     };
 
@@ -44,9 +47,7 @@
       return _results;
     };
 
-    Player.prototype.chooseCard = function() {
-      return console.log('this method needs to be implemented');
-    };
+    Player.prototype.chooseCard = function() {};
 
     return Player;
 
