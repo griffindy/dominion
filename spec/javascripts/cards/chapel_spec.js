@@ -2,7 +2,12 @@
 
   describe('Chapel', function() {
     beforeEach(function() {
-      return this.chapel = new Dominion.Cards.Chapel;
+      var turn;
+      turn = new Dominion.Turn;
+      turn.set({
+        player: new Dominion.Player
+      });
+      return this.chapel = new Dominion.Cards.Chapel(turn);
     });
     it('has a cost of 2', function() {
       return expect(this.chapel.get('cost')).toEqual(2);
@@ -16,7 +21,7 @@
         player = new Dominion.Player;
         spyOn(player, 'chooseCard');
         spyOn(Dominion, 'trash');
-        this.chapel.play;
+        this.chapel.play();
         expect(player.chooseCard).toHaveBeenCalled;
         return expect(Dominion.trash).toHaveBeenCalled;
       });

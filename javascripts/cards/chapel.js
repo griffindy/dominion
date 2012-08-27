@@ -10,8 +10,7 @@
       return Chapel.__super__.constructor.apply(this, arguments);
     }
 
-    Chapel.prototype.initialize = function(player, turn) {
-      this.player = player;
+    Chapel.prototype.initialize = function(turn) {
       this.turn = turn;
     };
 
@@ -26,7 +25,7 @@
         var _i, _results;
         _results = [];
         for (i = _i = 1; _i <= 4; i = ++_i) {
-          _results.push(this.player.chooseCard);
+          _results.push(this.turn.currentPlayer.chooseCard);
         }
         return _results;
       }).call(this);

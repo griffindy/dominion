@@ -1,6 +1,8 @@
 describe 'Chapel', ->
-  beforeEach(-> @chapel = new Dominion.Cards.Chapel)
-
+  beforeEach ->
+    turn = new Dominion.Turn
+    turn.set({player: new Dominion.Player })
+    @chapel = new Dominion.Cards.Chapel(turn)
 
   it 'has a cost of 2', ->
     expect(@chapel.get('cost')).toEqual 2
@@ -13,6 +15,6 @@ describe 'Chapel', ->
       player = new Dominion.Player
       spyOn player, 'chooseCard'
       spyOn Dominion, 'trash'
-      @chapel.play
+      @chapel.play()
       expect(player.chooseCard).toHaveBeenCalled
       expect(Dominion.trash).toHaveBeenCalled
