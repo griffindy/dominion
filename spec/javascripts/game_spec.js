@@ -1,10 +1,18 @@
 (function() {
 
   describe('Game', function() {
-    return it('creates the right number of users', function() {
-      var game;
-      game = new Dominion.Game(2);
-      return expect(game.players.length).toEqual(2);
+    beforeEach(function() {
+      return this.game = new Dominion.Game(2);
+    });
+    it('creates the right number of users', function() {
+      return expect(this.game.players.length).toEqual(2);
+    });
+    return describe('#nextPlayer', function() {
+      return it('moves to the next player', function() {
+        expect(this.game.currentPlayer).toEqual(this.game.players[0]);
+        this.game.nextPlayer();
+        return expect(this.game.currentPlayer).toEqual(this.game.players[1]);
+      });
     });
   });
 
