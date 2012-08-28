@@ -28,6 +28,11 @@ describe 'Player', ->
       expect(@player.get('deck').length).toEqual(5)
       expect(@player.get('discardPile').length).toEqual(1)
 
+  describe '#selectCardUnder', ->
+    it 'is pending', ->
+      console.log 'Player#selectCardUnder needs to be implemented'
+      pending
+
   describe '#chooseCard', ->
     it 'is pending', ->
       console.log 'Player#chooseCard needs to be implemented'

@@ -35,6 +35,12 @@
         return expect(this.player.get('discardPile').length).toEqual(1);
       });
     });
+    describe('#selectCardUnder', function() {
+      return it('is pending', function() {
+        console.log('Player#selectCardUnder needs to be implemented');
+        return pending;
+      });
+    });
     return describe('#chooseCard', function() {
       return it('is pending', function() {
         console.log('Player#chooseCard needs to be implemented');

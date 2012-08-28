@@ -47,6 +47,8 @@
       return _results;
     };
 
+    Player.prototype.selectCardUnder = function(cost) {};
+
     Player.prototype.chooseCard = function() {};
 
     return Player;

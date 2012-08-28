@@ -9,7 +9,9 @@ class Dominion.Player extends Backbone.Model
   drawNewHand: ->
     @drawCard(5)
 
-  discardCard: (number = 1)->
+  discardCard: (number = 1) ->
     @get('discardPile').push(@get('hand').pop()) for i in [1..number]
+
+  selectCardUnder: (cost) ->
 
   chooseCard: ->
