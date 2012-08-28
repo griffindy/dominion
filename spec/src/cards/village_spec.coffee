@@ -2,6 +2,9 @@ describe 'Village', ->
   beforeEach ->
     @village = new Dominion.Cards.Village
 
+  it 'has the right name', ->
+    expect(@village.get('name')).toEqual('Village')
+
   it 'has the right cost', ->
     expect(@village.get('cost')).toEqual(3)
 

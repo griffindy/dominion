@@ -4,6 +4,9 @@
     beforeEach(function() {
       return this.village = new Dominion.Cards.Village;
     });
+    it('has the right name', function() {
+      return expect(this.village.get('name')).toEqual('Village');
+    });
     it('has the right cost', function() {
       return expect(this.village.get('cost')).toEqual(3);
     });

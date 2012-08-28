@@ -11,13 +11,14 @@
     }
 
     Village.prototype.defaults = {
+      name: 'Village',
       cost: 3,
       description: '+1 Card; +2 Actions',
       type: 'Action'
     };
 
     Village.prototype.play = function() {
-      return window.game.currentPlayer.drawCard();
+      return window.game.currentPlayer.drawCard(1);
     };
 
     return Village;
