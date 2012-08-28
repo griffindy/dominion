@@ -2,10 +2,7 @@
 
   describe('Player', function() {
     beforeEach(function() {
-      this.player = new Dominion.Player;
-      return this.player.set({
-        hand: new Dominion.Collections.Hand
-      });
+      return this.player = new Dominion.Player;
     });
     it('initializes with a new deck', function() {
       return expect(this.player.get('deck').length).toEqual(10);

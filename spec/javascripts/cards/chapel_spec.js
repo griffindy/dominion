@@ -5,9 +5,6 @@
       var turn;
       window.game = new Dominion.Game(2);
       turn = new Dominion.Turn;
-      turn.set({
-        player: new Dominion.Player
-      });
       return this.chapel = new Dominion.Cards.Chapel(turn);
     });
     it('has a cost of 2', function() {

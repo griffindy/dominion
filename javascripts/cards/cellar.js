@@ -12,7 +12,12 @@
 
     Cellar.prototype.defaults = {
       cost: 2,
-      type: 'action'
+      type: 'action',
+      description: "+1 Action\nDiscard any number of cards.\n+1 Card per card discarded."
+    };
+
+    Cellar.prototype.play = function() {
+      return window.game.turn.actions += 1;
     };
 
     return Cellar;

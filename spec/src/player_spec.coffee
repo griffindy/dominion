@@ -1,7 +1,6 @@
 describe 'Player', ->
   beforeEach ->
     @player = new Dominion.Player
-    @player.set({ hand: new Dominion.Collections.Hand })
 
   it 'initializes with a new deck', ->
     expect(@player.get('deck').length).toEqual(10)
