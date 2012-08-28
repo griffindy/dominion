@@ -4,6 +4,9 @@
     beforeEach(function() {
       return this.chancellor = new Dominion.Cards.Chancellor;
     });
+    it('has the right name', function() {
+      return expect(this.chancellor.get('name')).toEqual('Chancellor');
+    });
     it('has the right cost', function() {
       return expect(this.chancellor.get('cost')).toEqual(3);
     });
@@ -23,7 +26,13 @@
         this.chancellor.play();
         return expect(window.game.turn.currency).toEqual(2);
       });
-      return it('allows the deck to be reshuffled', function() {});
+      return it('allows the deck to be reshuffled', function() {
+        var player;
+        player = window.game.currentPlayer;
+        spyOn(player, 'chancellorShuffle');
+        this.chancellor.play();
+        return expect(player.chancellorShuffle).toHaveBeenCalled;
+      });
     });
   });
 

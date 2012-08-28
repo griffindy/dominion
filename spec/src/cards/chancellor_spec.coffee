@@ -2,6 +2,9 @@ describe 'Chancellor', ->
   beforeEach ->
     @chancellor = new Dominion.Cards.Chancellor
 
+  it 'has the right name', ->
+    expect(@chancellor.get('name')).toEqual('Chancellor')
+
   it 'has the right cost', ->
     expect(@chancellor.get('cost')).toEqual(3)
 
@@ -25,4 +28,7 @@ describe 'Chancellor', ->
       expect(window.game.turn.currency).toEqual(2)
 
     it 'allows the deck to be reshuffled', ->
-      
+      player = window.game.currentPlayer
+      spyOn player, 'chancellorShuffle'
+      @chancellor.play()
+      expect(player.chancellorShuffle).toHaveBeenCalled

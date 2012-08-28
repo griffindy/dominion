@@ -11,13 +11,15 @@
     }
 
     Chancellor.prototype.defaults = {
+      name: 'Chancellor',
       cost: 3,
       description: "+2$\nYou may immediately put your deck in your discard pile",
       type: 'Action'
     };
 
     Chancellor.prototype.play = function() {
-      return window.game.turn.currency += 2;
+      window.game.turn.currency += 2;
+      return Dominion.Player.prototype.chancellorShuffle = function() {};
     };
 
     return Chancellor;

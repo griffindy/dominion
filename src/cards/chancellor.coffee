@@ -1,5 +1,6 @@
 class Dominion.Cards.Chancellor extends Backbone.Model
   defaults:
+    name: 'Chancellor'
     cost: 3
     description: """
       +2$
@@ -9,3 +10,4 @@ class Dominion.Cards.Chancellor extends Backbone.Model
 
   play: ->
     window.game.turn.currency += 2
+    Dominion.Player::chancellorShuffle = ->
